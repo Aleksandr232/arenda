@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useTelegram } from './components/hooks/useTelegram';
 import Header from './components/Header/header';
+import Form from './components/Form/form';
 import './App.css';
 
 
@@ -16,7 +17,7 @@ function App() {
   return (
    <div className='App'> 
       <Header/>
-      
+      <Form/>
    </div>
   );
 }

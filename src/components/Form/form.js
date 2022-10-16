@@ -1,10 +1,46 @@
+import { useState } from 'react'
 import './form.css'
 
 
 const Form=()=>{
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [subject, setSubject] = useState('vshki')
+
+    const onChangeName = (e) =>{
+        setName(e.target.value)
+    }
+
+    const onChangeSurname = (e) =>{
+        setSurname(e.target.value)
+    }
+
+    const onChangeSubject= (e) =>{
+        setSubject(e.target.value)
+    }
+
     return(
-        <div>
-            
+        <div className='form'>
+            <h3>Введите ваши данные</h3>
+            <input 
+            type="text" 
+            placeholder='Имя'
+            value={name}
+            onChange={onChangeName}
+            />
+            <input 
+            type="text" 
+            placeholder='Фамилия'
+            value={surname}
+            onChange={onChangeSurname}
+            />
+            <select value={subject} onChange={onChangeSubject} className='select'>
+                <option value="vshki">Вышки-туры</option>
+                <option value="mini">Минитрактор</option>
+                <option value="stroi">Строительные леса</option>
+                <option value="uborka">Уборка снега с крыш</option>
+                <option value="gruz">Грузоперевозки</option>
+            </select>
         </div>
     )
 }
