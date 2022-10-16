@@ -1,10 +1,12 @@
-
+import { useTelegram } from '../hooks/useTelegram';
 import './button.css'
 
 
-const Button=(props)=>{
+const Button=()=>{
+    const {onClose} = useTelegram();
+
     return(
-        <button {...props} className={"button" + props.className}/>
+        <button className='button' onClick={onClose}>Закрыть</button>
     )
 }
 
